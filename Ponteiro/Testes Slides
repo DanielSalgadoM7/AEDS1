@@ -49,16 +49,35 @@ printf("%4d ", *(--ptr)); //100, 81, 64, 49, 36, 25, 16, 9, 4, 1
 }
 */
 
-Exercício: Considere a matriz a seguir. Como preencher a matriz
-usando ponteiro? Como imprimir a matriz usando ponteiro?
+//Exercício: Considere a matriz a seguir. Como preencher a matriz usando ponteiro? Como imprimir a matriz usando ponteiro?
+
+/* 
 #include <stdio.h>
+#include <stdlib.h>
+
 #define NLIN 2
 #define NCOL 3
 int main()
 {
 int m[NLIN][NCOL];
+  
+int* ptr = (int*) malloc(NLIN*NCOL*sizeof(int));
+  
+  for(int i=0;i<NLIN * NCOL;i++){
+    printf("Digite os números da sua matriz: ");
+    scanf("%d", ptr+i);
+  }
+  
+  printf("Os números da sua matriz são: ");
+    
+  for(int i=0;i<NLIN;i++){
+    printf("\n");
+    for(int j=0;j<NCOL;j++){
+    printf("%d\n", *(ptr + i*NCOL + j));
+    }
+  }  
 }
-Ponteiros
+*/
 
 
 
