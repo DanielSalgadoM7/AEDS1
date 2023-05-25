@@ -50,6 +50,7 @@ printf("\n");
 for(int i = 0; i < NLIN; i++) {
 free(p[i]);
 }
+return 0;
 
 //Ponteiro para ponteiro
 #include <stdio.h>
