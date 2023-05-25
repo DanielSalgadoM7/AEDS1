@@ -15,17 +15,50 @@ printf("c = %d", c);
 
 
 // O que será escrito no programa?
-#include <stdio.h>
+
+/* #include <stdio.h>
 int main()
 {
 int x, y, *p;
 y = 0;
-p = &y;
-x = *p;
+p = &y; // p = y = 0
+x = *p; // x = 0
 x = 4;
-(*p)++;
---x;
-(*p) += x;
-printf("x=%d y=%d *p=%d", x, y, *p);
+(*p)++; //p = 1
+--x; // x = 3
+(*p) += x; //p = 4
+printf("x=%d y=%d *p=%d", x, y, *p); // x = 3, y=4, p=4
 }
+*/
+
+// O que será escrito no programa?
+
+/* #include <stdio.h>
+#include <math.h>
+int main()
+{
+const int TAM = 10;
+int vet[10] = {1,2,3}; //1,2,3,0,0,0,0,0,0,0
+int *ptr = vet;
+for(int i = 0; i < TAM; i++) {
+*(ptr++) = pow(i+1, 2); //1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+}
+for(int i = 0; i < TAM; i++) {
+printf("%4d ", *(--ptr)); //100, 81, 64, 49, 36, 25, 16, 9, 4, 1
+}
+}
+*/
+
+Exercício: Considere a matriz a seguir. Como preencher a matriz
+usando ponteiro? Como imprimir a matriz usando ponteiro?
+#include <stdio.h>
+#define NLIN 2
+#define NCOL 3
+int main()
+{
+int m[NLIN][NCOL];
+}
+Ponteiros
+
+
 
