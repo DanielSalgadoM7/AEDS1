@@ -5,7 +5,16 @@
 
 #include <stdio.h>
 
-
+void notasAlunos(float nota1, float nota2, float nota3, char letra){
+  float media;
+  if(letra == 'A'){
+    media = (nota1 + nota2 + nota3)/3.0;
+    printf("\nA média do aluno é: %.2f\n", media);
+  }else if(letra == 'P'){
+    media = (nota1*5 + nota2*3 + nota3*2)/3.0;
+    printf("\nA média do aluno é: %.2f\n", media);
+  }
+}
 
 int main(){
   int qnt;
