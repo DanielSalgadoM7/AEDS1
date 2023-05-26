@@ -8,17 +8,19 @@ float calculaSomatorio(float somatorio, int num, int fatorial){
   for(int i=1;i<=num;i++){
     fatorial *= i;
   }
-  for(int i=1;i<=num;i++){
-   somatorio = 1 + 1/fatorial; 
-  }
+   somatorio = somatorio + 1/fatorial; 
+  
+   return somatorio;
 }
 
 int main(void) {
-  int num = 0, somatorio = 0, fatorial = 1;
+  int num, somatorio = 1, fatorial = 1;
+  float resultado = 0;
 
   printf("Digite o número desejado: ");
   scanf("%d", &num);
 
-  calculaSomatorio(somatorio, num, fatorial);
+  resultado = calculaSomatorio(somatorio, num, fatorial);
+  printf("O somatório é: %f", resultado);
   return 0;
 }
