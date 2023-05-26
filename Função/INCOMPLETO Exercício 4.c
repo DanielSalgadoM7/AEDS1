@@ -10,15 +10,15 @@ Faça um programa que leia um número indeterminado de triângulos (valores dos 
 
 void calculaTriangulo(int n1, int n2, int n3){
 
-  printf("Digite o lado de cada triângulo");
+  printf("\nDigite o lado de cada triângulo: ");
   scanf("%d %d %d", &n1, &n2, &n3);
   
   if(n1 == n2 && n1 == n3){
-    printf("O triângulo é equilátero");
+    printf("\nO triângulo é equilátero!\n");
   }else if(n1 != n2 && n2 == n3 || n1 == n2 && n1 != n3){
-    printf("O triângulo é isósceles");
+    printf("\nO triângulo é isósceles!\n");
   }else{
-    printf("O triângulo é escaleno");
+    printf("\nO triângulo é escaleno!\n");
   }
 }
 
