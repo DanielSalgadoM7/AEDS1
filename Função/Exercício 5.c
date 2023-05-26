@@ -12,7 +12,7 @@ A partir de 90 A
 #include <stdio.h>
 
 void mediaAluno(float media){
-  printf("Digite a média do aluno: ");
+  printf("\nDigite a média do aluno: ");
   scanf("%f", &media);
 
   if(media <= 39){
