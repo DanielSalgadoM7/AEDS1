@@ -13,10 +13,12 @@ void calculaTriangulo(int n1, int n2, int n3){
   printf("\nDigite o lado de cada triângulo: ");
   scanf("%d %d %d", &n1, &n2, &n3);
   
-  if(n1 == n2 && n1 == n3){
-    printf("\nO triângulo é equilátero!\n");
+  if(n1 + n2 < n3 || n1 + n3 < n2 || n2 + n3 < n1){
+    printf("\n Não é um triângulo\n");
   }else if(n1 != n2 && n2 == n3 || n1 == n2 && n1 != n3){
     printf("\nO triângulo é isósceles!\n");
+  }else if(n1 == n2 && n1 == n3){
+    printf("\nO triângulo é equilátero!\n");
   }else{
     printf("\nO triângulo é escaleno!\n");
   }
