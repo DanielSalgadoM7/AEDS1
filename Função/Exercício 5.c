@@ -11,26 +11,35 @@ A partir de 90 A
 
 #include <stdio.h>
 
-void media(float media){
+void mediaAluno(float media){
   printf("Digite a média do aluno: ");
-  scanf("%f", media);
+  scanf("%f", &media);
 
   if(media <= 39){
-    printf("A nota conceito do aluno é F");
+    printf("\nA nota conceito do aluno é F\n");
   }else if(media <=59){
-    printf("A nota conceito do aluno é E");
+    printf("\nA nota conceito do aluno é E\n");
   }else if(media <=69){
-    printf("A nota conceito do aluno é D");
+    printf("\nA nota conceito do aluno é D\n");
   }else if(media <=79){
-    printf("A nota conceito do aluno é C");
+    printf("\nA nota conceito do aluno é C\n");
   }else if(media <=89){
-    printf("A nota conceito do aluno é B");
+    printf("\nA nota conceito do aluno é B\n");
   }else if(media >-90){
-    printf("A nota conceito do aluno é A");
+    printf("\nA nota conceito do aluno é A\n");
   }
 }
 
 int main(void) {
-  
+  float media;
+  int qnt;
+
+  printf("Digite a quantidade de alunos que deseja colocar a média: ");
+  scanf("%d", &qnt);
+
+  for(int i=0;i<qnt;i++){
+    mediaAluno(media);
+  }
   return 0;
 }
+
