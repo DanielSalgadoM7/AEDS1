@@ -4,10 +4,26 @@
 
 #include <stdio.h>
 
-float salario(float salario, int filhos){
+void rendaCapita(float salario, int filhos){
   printf("Digite seu salário e a quantidade de filhos que possui: ");
   scanf("%f %d", &salario, &filhos);
 
-  float renda;
+  float renda = 0;
   renda = salario/filhos;
 }
+
+int main(){
+  int adultos, filhos;
+  float salario, renda, soma = 0;
+  
+  printf("Digite a quantidade de adultos: ");
+  scanf("%d", &adultos);
+
+  for(int i=0;i<adultos;i++){
+    rendaCapita(salario,  filhos);
+    soma += renda;
+  }
+  printf("A renda per capita é: %.2f", renda);
+}
+
+
