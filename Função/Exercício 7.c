@@ -15,7 +15,7 @@ int calculaFatorial(int num, int fatorial){
 float calculaSomatorio(float somatorio, int num, int fatorial){
 
    for (int i = 1; i <= num; i++) {
-    somatorio = somatorio + 1.0 / calculaFatorial(num, fatorial);
+    somatorio = somatorio + 1.0 / calculaFatorial(i, fatorial);
   }
 
   return somatorio;
