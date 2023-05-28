@@ -5,6 +5,7 @@ Faça um programa que leia N e imprima o valor retornado pela função.*/
 #include <stdio.h>
 
 int calculaFatorial(int num, int fatorial){
+  fatorial = 1;
   for(int i=1;i<=num;i++){
     fatorial *= i;
   }
@@ -15,7 +16,7 @@ int calculaFatorial(int num, int fatorial){
 float calculaSomatorio(float somatorio, int num, int fatorial){
 
    for (int i = 1; i <= num; i++) {
-    somatorio = somatorio + 1.0 / calculaFatorial(num, fatorial);
+    somatorio = somatorio + 1.0 / calculaFatorial(i, fatorial);   //Quando chama o I na função de fatorial, mostra o resultado de cada iteração
   }
 
   return somatorio;
