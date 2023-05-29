@@ -7,8 +7,9 @@ float notasAlunos(int qntAlunos, int qntNotas){
   float media, nota[qntAlunos];
 
   for(int i=0;i<qntAlunos;i++){
+    printf("\n");
     for(int j=0;j<qntNotas;j++){
-      printf("Digite a nota do aluno: ");
+      printf("Digite a nota %d do aluno %d: ",j+1, i+1);
       scanf("%f", &nota[j]);
       media += nota[j];
     }
@@ -17,7 +18,7 @@ float notasAlunos(int qntAlunos, int qntNotas){
   media = media/qntAlunos;
 
   if(media>=6){
-    return printf("A média do aluno foi: %.f e ele foi aprovado", media);
+    mediaAprovado += media/
   }else{
   return printf("A média do aluno foi: %.f e ele foi reprovado", media);
   }
@@ -29,8 +30,8 @@ int main(void) {
 
   printf("Digite a quantidade de alunos e quantidade de notas que deseja colocar de cada aluno: ");
   scanf("%d %d", &qntAlunos, &qntNotas);
-
+  
   notasAlunos(qntAlunos, qntNotas);
-
+  
   return 0;
 }
