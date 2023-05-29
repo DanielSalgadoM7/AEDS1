@@ -1,4 +1,6 @@
-
+/*Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo. A função deve retornar um valor lógico (true ou false). 
+Faça um programa que lê N números e para cada um deles exibe uma mensagem informando se ele é positivo ou não, dependendo se foi retornado verdadeiro 
+ou falso pela função*/
 
 
 #include <stdio.h>
