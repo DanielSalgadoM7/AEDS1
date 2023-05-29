@@ -30,5 +30,7 @@ int main(void) {
   printf("Digite a quantidade de alunos e quantidade de notas que deseja colocar de cada aluno: ");
   scanf("%d %d", &qntAlunos, &qntNotas);
 
+  notasAlunos(qntAlunos, qntNotas);
+
   return 0;
 }
