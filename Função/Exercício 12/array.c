@@ -4,7 +4,7 @@
 void printArray(int n, int v[]){
   printf("\nOs elementos do vetor são: ");
   for(int i=0;i<n;i++){
-    printf("\n%d\t", v[i]);
+    printf("%d\t", v[i]);
   }  
 }
 
@@ -15,6 +15,7 @@ float mediaArray(int n, int v[]){
     media += v[i];
   }
   media = media/n;
+  return media;
 }
 
 //Recebe o array e seu tamanho. Retorna o maior elemento do array.
@@ -26,7 +27,7 @@ float maxArray(int n, int v[]){
       maior = v[i];
     }
   }
-  printf("O maior número é: %d", maior);
+  return maior;
 }
 
 
@@ -35,10 +36,9 @@ float minArray(int n, int v[]){
   int menor;
   menor = v[0];
   for(int i=0;i<n;i++){
-    if(v[i]>menor){
+    if(v[i]<menor){
       menor = v[i];
     }
   }
-  printf("O maior número é: %d", menor);
+  return menor;
 }
-
