@@ -8,7 +8,7 @@ int numeroElevado(x, n){
   }else if(n==1){
     return x;
   }else{
-    return x
+    return x * numeroElevado(x, n-1);
   }
 }
 
