@@ -13,7 +13,15 @@ h) Libere a memória alocada.*/
 #include <stdlib.h>
 
 int main(void) {
- 
+  int *ptr;
+  int i = 0;
+
+  ptr = (int *)malloc(5 * sizeof(int));
+
+  // digitar o 5 numeros
+  printf("\nDigite os 5 numeros: \n");
+  for (i = 0; i < 5; i++) {
+    scanf("%d", &ptr[i]);
   }
 
   // Imprima os endereços onde foram armazenados os 5 números
