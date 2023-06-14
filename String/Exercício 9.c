@@ -1,0 +1,1 @@
+//Ler uma string de no máximo 50 caracteres. Em seguida, leia outra string de no máximo 3 caracteres. Informe quantas vezes a segunda string aparece na primeira string, e diga as posições iniciais em que ela aparece
