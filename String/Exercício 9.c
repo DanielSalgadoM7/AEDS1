@@ -8,20 +8,22 @@ int main(void) {
   char texto[50], texto2[3];
   int contador = 0;
   printf("Digite um texto: ");
-  scanf(" %[^\n]", texto);
-  
-  printf("Digite um 2° texto: ");
-  scanf(" %[^\n]", texto);
+  fgets(texto, 50, stdin);
+
+  printf("\nDigite um outro texto de 3 palavras: ");
+  fgets(texto2, 3, stdin);
 
   int tamanho = strlen(texto);
   int j=0;
+  printf("\nO número das posições que a letra aparece é: ");
   for(int i=0;i<tamanho;i++){
     if(texto[i]==texto2[j]){
-      printf("%d", i);
+      printf("%d\t", i);
       contador++;
       j++;
     }
   }
-  printf("O contador de letras é: %d", contador);
+  texto[j]='\0';
+  printf("\n\nO contador de letras é: %d", contador);
   return 0;
 }
