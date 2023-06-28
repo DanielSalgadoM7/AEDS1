@@ -15,15 +15,19 @@ typedef struct VeiculoGeral{
 }VeiculoGeral;
 
 //Função para validar Placa
-void ValidarPlaca(VeiculoGeral veiculo[], int NVeiculos){
-  VeiculoGeral veiculoNovo;
+/*void ValidarPlaca(VeiculoGeral veiculo[], int NVeiculos){
+  VeiculoGeral pesquisaPlaca;
+
+    printf("\nDigite o veículo que deseja ver: ");
+  scanf(" %[^\n]", pesquisaPlaca.placa);
   
-  while(strlen(veiculoNovo.placa)!=7){
+  while(strlen(pesquisaPlaca.placa)!=7){
     printf("\nPlaca inválida! Tente novamente: ");
-    scanf(" %[^\n]", veiculoNovo.placa);
-    veiculoNovo.placa[8] = '\0';
+    scanf(" %[^\n]", pesquisaPlaca.placa);
+    pesquisaPlaca.placa[8] = '\0';
   }
-}
+}*/
+
 //Case 1 - Função para listar veículos na tela do usuário
 //Lista feita!
 void ListarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
@@ -32,34 +36,37 @@ void ListarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
   }else{
     printf("\nO total de veículos cadastrados no sistema é: %d\n", NVeiculos);
     for(int i=0;i<NVeiculos;i++){
-      printf("\n\nInformações do carro cadastrado %d\n", i+1);
+      printf("\n\nInformações do carro cadastrado %d:\n\n", i+1);
       printf("Placa: %s\nMarca: %s\nModelo: %s\nAno: %d\nPreço: %.2f\nTipo: %s\n", veiculo[i].placa, veiculo[i].marca, veiculo[i].modelo, veiculo[i].ano, veiculo[i].preco, veiculo[i].tipo);  
     }
   }
 }
 
+
 //Case 2 - Função para pesquisar um veículo
+//Pesquisa feita!
 void PesquisarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
+  //criação de uma nova variável que receberá a pesquisa da placa, para comparar com as placas existentes.
   VeiculoGeral pesquisaPlaca;
   
-  printf("\nDigite o veículo que deseja ver: ");
+  printf("\nDigite o número da placa do veículo que deseja ver: ");
   scanf(" %[^\n]", pesquisaPlaca.placa);
 
   for(int i=0;i<NVeiculos;i++){
     if(strcmp(veiculo[i].placa, pesquisaPlaca.placa)==0){
-      printf("Placa: %s\nMarca: %s\nModelo: %s\nAno: %d\nPreço: %.2f\nTipo: %s\n", veiculo[i].placa, veiculo[i].marca, veiculo[i].modelo, veiculo[i].ano, veiculo[i].preco, veiculo[i].tipo);
-    }else{
-      printf("\nVeículo não cadastrado\n");
+      printf("\nPlaca: %s\nMarca: %s\nModelo: %s\nAno: %d\nPreço: %.2f\nTipo: %s\n", veiculo[i].placa, veiculo[i].marca, veiculo[i].modelo, veiculo[i].ano, veiculo[i].preco, veiculo[i].tipo);
+      return;
     }
   }
+   printf("\nVeículo não cadastrado\n");
 }
-
 
 
 //Case 3 - Função para cadastrar um veículo
 //NVeiculos será ponteiro, pois conseguirá ser mudado nas funções/main
 //Cadastro feito!
 void CadastrarVeiculo(VeiculoGeral veiculo[], int *NVeiculos){
+  //criação de uma nova variável que receberá as informações de um novo carro.
   VeiculoGeral veiculoNovo;
   
   //fazer com que só possa ter 7 caracteres na placa
@@ -96,15 +103,17 @@ void CadastrarVeiculo(VeiculoGeral veiculo[], int *NVeiculos){
   //mensagem que pediu, informando o sucesso no cadastro
   printf("\n\nVeículo Cadastrado!\n");
 
-  //faz com que o veiculoNovo seja cadastrado no vetor que lê os veículos
+  //faz com que o veiculoNovo seja cadastrado no vetor que lê os veículos, presente no arquivo.
   veiculo[*NVeiculos] = veiculoNovo;
+  //soma o número de veículos, para colocar na linha 1 do arquivo e checar em outras funções.
   ++ (*NVeiculos);
 }
 
 
 //Depois de Cadastrar o Veículo, a função de Gravar será ativada, na mesma Case, pra aparecer no arquivo
 void GravaVeiculo(VeiculoGeral veiculo[], int NVeiculos) {
-  
+
+  //abre o arquivo para escrita
   FILE *arq = fopen("veiculos.txt", "w");
 
   if (arq != NULL) {
@@ -119,6 +128,44 @@ void GravaVeiculo(VeiculoGeral veiculo[], int NVeiculos) {
   } else {
     printf("As informações do veículo não foram salvas. Favor tentar novamente.");
   }
+}
+
+
+//Case 4 - Função para editar um veículo
+//Edição feita!
+void EditarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
+  //criação de uma nova variável que receberá a pesquisa da placa, para comparar com as placas existentes.
+  VeiculoGeral editarPlaca;
+  
+  printf("\nDigite o número da placa do veículo que quer editar: ");
+  scanf(" %[^\n]", editarPlaca.placa);
+
+  //escrevendo novamente os dados da nova placa
+  for(int i=0;i<NVeiculos;i++){
+    if(strcmp(veiculo[i].placa, editarPlaca.placa)==0){
+      printf("\nDigite as novas informações: \n");
+      printf("\nMarca: ");
+      scanf(" %[^\n]", veiculo[i].marca);
+      printf("\nModelo: ");
+      scanf(" %[^\n]", veiculo[i].modelo);
+      printf("\nAno: ");
+      scanf(" %d", &veiculo[i].ano);
+      printf("\nPreço: ");
+      scanf(" %f", &veiculo[i].preco);
+      printf("\nTipo: ");
+      scanf(" %[^\n]", veiculo[i].tipo);
+      return;
+    }
+  }
+   printf("\nVeículo não cadastrado\n");
+}
+
+
+void ExcluirVeiculo(VeiculoGeral veiculo[], int NVeiculos){
+  VeiculoGeral excluirPlaca;
+  
+  printf("\nDigite o número da placa do veículo que quer excluir: ");
+  scanf(" %[^\n]", excluirPlaca.placa);
 }
 
 
@@ -171,11 +218,15 @@ int main(){
         CadastrarVeiculo(veiculo, &NVeiculos);
         GravaVeiculo(veiculo, NVeiculos);
       break;
-    
+
+      //chamando a função GravaVeiculo aqui, as informações escritas no EditarVeiculo vão ser salvas no veiculo[i], então troca as informações sem precisar abrir o arquivo na função, usando o W, que ia excluir tudo de antes
       case 4: 
+        EditarVeiculo(veiculo, NVeiculos);
+        GravaVeiculo(veiculo, NVeiculos);
       break;
     
-      case 5: 
+      case 5:
+        ExcluirVeiculo(veiculo, NVeiculos);
       break;
 
       case 6:
