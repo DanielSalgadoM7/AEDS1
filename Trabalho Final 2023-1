@@ -166,6 +166,12 @@ void ExcluirVeiculo(VeiculoGeral veiculo[], int NVeiculos){
   
   printf("\nDigite o número da placa do veículo que quer excluir: ");
   scanf(" %[^\n]", excluirPlaca.placa);
+
+  //comparar com algum terminal para finalizar
+  for(int i=0;i<NVeiculos;i++){
+    if(strcmp(veiculo[i].placa, )==0){
+    }
+  }
 }
 
 
