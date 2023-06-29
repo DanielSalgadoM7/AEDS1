@@ -39,6 +39,13 @@ void PesquisarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
   printf("\nDigite o número da placa do veículo que deseja ver: ");
   scanf(" %[^\n]", pesquisaPlaca.placa);
 
+  //verificar se a placa tem 7 caracteres
+  do{
+    printf("\nQuantidade inválida de caracteres! Tente novamente: ");
+    scanf(" %[^\n]", pesquisaPlaca.placa);
+    
+  }while((strlen(pesquisaPlaca.placa)!=7));
+
   for(int i=0;i<NVeiculos;i++){
     if(strcmp(veiculo[i].placa, pesquisaPlaca.placa)==0){
       printf("\nPlaca: %s\nMarca: %s\nModelo: %s\nAno: %d\nPreço: %.2f\nTipo: %s\n", veiculo[i].placa, veiculo[i].marca, veiculo[i].modelo, veiculo[i].ano, veiculo[i].preco, veiculo[i].tipo);
@@ -60,10 +67,12 @@ void CadastrarVeiculo(VeiculoGeral veiculo[], int *NVeiculos){
   printf("\nDigite a placa do veículo que deseja cadastrar: ");
   scanf(" %[^\n]", veiculoNovo.placa);
 
-  if(strlen(veiculoNovo.placa)!=7){
-    printf("\nQuantidade inválida de caracteres!");
-    return;
-  }
+  //verificar se a placa tem 7 caracteres
+  do{
+    printf("\nQuantidade inválida de caracteres! Tente novamente: ");
+    scanf(" %[^\n]", veiculoNovo.placa);
+    
+  }while((strlen(veiculoNovo.placa)!=7));
 
   //Verificar placas repetidas
   for(int i=0;i<*NVeiculos;i++){
@@ -132,6 +141,13 @@ void EditarVeiculo(VeiculoGeral veiculo[], int NVeiculos){
   
   printf("\nDigite o número da placa do veículo que quer editar: ");
   scanf(" %[^\n]", editarPlaca.placa);
+
+  //verificar se a placa tem 7 caracteres
+  do{
+    printf("\nQuantidade inválida de caracteres! Tente novamente: ");
+    scanf(" %[^\n]", editarPlaca.placa);
+    
+  }while((strlen(editarPlaca.placa)!=7));
 
   //escrevendo novamente os dados da nova placa
   for(int i=0;i<NVeiculos;i++){
@@ -227,6 +243,7 @@ int main(){
   
   int opcao;
 
+  //Menu e opções de resposta para cada função
   do{
     printf("\n\nLoja de Automóveis Daniel Salgado");
     printf("\n\n1 - Listar todos os veículos");
@@ -237,6 +254,8 @@ int main(){
     printf("\n6 - Sair do Programa");
     printf("\n\nDigite a opção que deseja: ");
     scanf("%d", &opcao);
+
+    //chamando a função GravaVeiculo em cada caso que necessita de editar o arquivo, desse jeito, ele consegue editar o arquivo sem sobreescrever o que já existe.
     
     switch(opcao){
       case 1: 
@@ -251,8 +270,7 @@ int main(){
         CadastrarVeiculo(veiculo, &NVeiculos);
         GravaVeiculo(veiculo, NVeiculos);
       break;
-
-      //chamando a função GravaVeiculo aqui, as informações escritas no EditarVeiculo vão ser salvas no veiculo[i], então troca as informações sem precisar abrir o arquivo na função, usando o W, que ia excluir tudo de antes
+      
       case 4: 
         EditarVeiculo(veiculo, NVeiculos);
         GravaVeiculo(veiculo, NVeiculos);
@@ -270,6 +288,7 @@ int main(){
       default:
       printf("\nFavor digite um número de opção válido!\n");
     }
+    
   }while(opcao!=6);
   
   return 0;
