@@ -60,6 +60,11 @@ void CadastrarVeiculo(VeiculoGeral veiculo[], int *NVeiculos){
   printf("\nDigite a placa do veículo que deseja cadastrar: ");
   scanf(" %[^\n]", veiculoNovo.placa);
 
+  if(strlen(veiculoNovo.placa)!=7){
+    printf("\nQuantidade inválida de caracteres!");
+    return;
+  }
+
   //Verificar placas repetidas
   for(int i=0;i<*NVeiculos;i++){
     if(strcmp(veiculo[i].placa, veiculoNovo.placa)==0){
@@ -175,26 +180,25 @@ void ExcluirVeiculo(VeiculoGeral veiculo[], int *NVeiculos){
       printf("\n\nDeseja excluir este veiculo? Digite S para sim, e N para não: ");
       scanf(" %c", &resposta);
 
-      while((resposta != 'S' || resposta != 's' || resposta != 'N' || resposta != 'n'){
+      while(!(resposta == 'S' || resposta == 'N')){
         printf("\nResposta inválida, favor digitar novamente: ");
         scanf(" %c", &resposta);
       }
 
-      if (resposta == 'S' || resposta == 's') {
+      if (resposta == 'S') {
         for (int j = i; j < (*NVeiculos) - 1; j++) {
           veiculo[j] = veiculo[j + 1];
         }
         (*NVeiculos)--;
         printf("\nVeiculo excluido com sucesso!\n");
         return;
-      }
-
-      else {
+      } else if(resposta == 'N'){
         printf("\nExclusão de veiculo cancelada!\n");
         return;
       }
     }
   }
+  printf("\nVeículo não encontrado!");
 }
 
 
