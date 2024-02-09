@@ -19,9 +19,9 @@ int main() {
     
     area = n * (raio*raio);
     
-    scanf("%.2f", &raio);
+    scanf("%lf", &raio);
     
-    printf("A=%.4f", area);
+    printf("A=%.4lf", area);
     
     return 0;
 }
