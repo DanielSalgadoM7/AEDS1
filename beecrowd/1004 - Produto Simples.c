@@ -16,7 +16,7 @@ int main(){
 
   PROD = valorA * valorB;
   
-  printf("PROD = %d", PROD;
+  printf("PROD = %d", PROD);
   
   return 0;
 }
