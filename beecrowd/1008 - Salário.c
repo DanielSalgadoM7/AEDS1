@@ -20,7 +20,7 @@ int main(){
 
   salario = numHoras*numValor;
 
-  printf("NUMBER = %d\n SALARY = U$%.2f\n", numFuncionario, salario);
+  printf("NUMBER = %d\n SALARY = U$ %.2f\n", numFuncionario, salario);
   
   return 0;
 }
