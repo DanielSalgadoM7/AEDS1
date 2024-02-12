@@ -14,10 +14,10 @@ int main(){
   char nome[100];
   float salarioFixo, salarioMes, vendasMes;
 
-  scanf(" %[^\n]", &nome);
+  scanf(" %[^\n]", nome);
   scanf("%f %f", &salarioFixo, &vendasMes);
 
-  salarioMes = 15%100 * vendasMes;
+  salarioMes = (0.15 * vendasMes) + salarioFixo;
 
   printf("TOTAL = R$ %.2f\n", salarioMes);
   return 0;
