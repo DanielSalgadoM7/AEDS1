@@ -10,16 +10,19 @@ Imprima o total que o funcionário deverá receber, conforme exemplo fornecido.*
 
 #include <stdio.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int main(){
-  char *nome;
-  nome = (char*) malloc (50*sizeof(char));
-  
-  float salarioFixo, salarioMes, vendasMes;
+  char nome[100];
+  double salarioFixo, salarioMes, vendasMes, bonus;
 
-  gets(nome);
-  scanf("%f %f", &salarioFixo, &vendasMes);
+  scanf("%s", nome);
+  scanf("%lf %lf", &salarioFixo, &vendasMes);
 
-  salarioMes = (0.15 * vendasMes) + salarioFixo;
+  //criação de variavel bonus para não bugar o salario do mês
+  bonus = vendasMes * 0.15;
+  salarioMes = bonus + salarioFixo;
 
   printf("TOTAL = R$ %.2f\n", salarioMes);
   return 0;
