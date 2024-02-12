@@ -11,3 +11,24 @@ Saída
 O arquivo de saída deverá conter 5 linhas de dados. Cada linha corresponde a uma das áreas descritas acima, sempre com mensagem correspondente e um espaço entre os dois pontos e o valor. 
 O valor calculado deve ser apresentado com 3 dígitos após o ponto decimal.*/
 
+#include <stdio.h>
+ 
+int main() {
+    double valorA, valorB, valorC;
+    
+    double areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo;
+    scanf("%lf %lf %lf" &valorA, &valorB, &valorC);
+    
+    areaTriangulo = valorA * valorC;
+    areaCirculo = valorC * 3.14159;
+    areaTrapezio = (valorA + valorB)valorC/2;
+    areaQuadrado = valorB * valorB;
+    areaRetangulo = valorA * valorB;
+    
+    printf("TRIANGULO: %.3lf\n", &areaTriangulo);
+    printf("CIRCULO: %.3lf\n", &areaCirculo);
+    printf("TRAPEZIO: %.3lf\n", &areaTrapezio);
+    printf("QUADRADO: %.3lf\n", &areaQuadrado);
+    printf("RETANGULO: %.3lf\n", &areaRetangulo);
+    return 0;
+}
