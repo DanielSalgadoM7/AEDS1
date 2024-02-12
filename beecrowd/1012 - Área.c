@@ -17,11 +17,11 @@ int main() {
     double valorA, valorB, valorC;
     
     double areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo;
-    scanf("%lf %lf %lf" &valorA, &valorB, &valorC);
+    scanf("%lf %lf %lf", &valorA, &valorB, &valorC);
     
     areaTriangulo = valorA * valorC;
     areaCirculo = valorC * 3.14159;
-    areaTrapezio = (valorA + valorB)valorC/2;
+    areaTrapezio = ((valorA + valorB)*valorC)/2;
     areaQuadrado = valorB * valorB;
     areaRetangulo = valorA * valorB;
     
