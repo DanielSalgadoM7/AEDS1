@@ -11,10 +11,12 @@ Imprima o total que o funcionário deverá receber, conforme exemplo fornecido.*
 #include <stdio.h>
 
 int main(){
-  char nome[100];
+  char *nome;
+  nome = (char*) malloc (50*sizeof(char));
+  
   float salarioFixo, salarioMes, vendasMes;
 
-  scanf(" %[^\n]", nome);
+  gets(nome);
   scanf("%f %f", &salarioFixo, &vendasMes);
 
   salarioMes = (0.15 * vendasMes) + salarioFixo;
