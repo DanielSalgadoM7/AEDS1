@@ -12,13 +12,15 @@ A saída deverá ser uma mensagem conforme o exemplo fornecido abaixo, lembrando
  
 int main() {
     int codigoPeca1, numPeca1, codigoPeca2, numPeca2;
-    double valorPeca1, valorPeca2, valorTotal;
+    double valorPeca1, valorPeca2, valorTotal, Peca1, Peca2;
     
     scanf("%d %d %lf", &codigoPeca1, &numPeca1, &valorPeca1);
     scanf("%d %d %lf", &codigoPeca2, &numPeca2, &valorPeca2);
     
-    valorTotal = (numPeca1 * valorPeca1) + (numPeca2 * valorPeca2);
+    Peca1 = (numPeca1 * valorPeca1);
+    Peca2 = (numPeca2 * valorPeca2);
+    valorTotal = (Peca1) + (Peca2);
     
-    printf("VALOR A PAGAR: R$ %lf", valorTotal);
+    printf("VALOR A PAGAR: R$ %.2lf\n", valorTotal);
     return 0;
 }
