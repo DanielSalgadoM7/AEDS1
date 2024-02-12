@@ -12,13 +12,11 @@ A saída deverá ser uma mensagem "VOLUME" conforme o exemplo fornecido abaixo, 
 #include <stdio.h>
  
 int main() {
-    int raio, raioTriplo;
-    double volume;
+    double R, volume;
     
-    scanf("%d", &raio);
-    
-    raioTriplo = raio * raio * raio;
-    volume = (4.0/3.0) * 3.14159 * raioTriplo;
+    scanf("%lf", &R);
+
+    volume = 4.0/3.0*3.14159*R*R*R;
     
     printf("VOLUME = %.3lf\n", volume);
     return 0;
