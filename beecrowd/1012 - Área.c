@@ -20,7 +20,7 @@ int main() {
     scanf("%lf %lf %lf", &valorA, &valorB, &valorC);
     
     areaTriangulo = (valorA * valorC)/2;
-    areaCirculo = valorC * 3.14159;
+    areaCirculo = valorC * valorC * 3.14159;
     areaTrapezio = ((valorA + valorB)*valorC)/2;
     areaQuadrado = valorB * valorB;
     areaRetangulo = valorA * valorB;
