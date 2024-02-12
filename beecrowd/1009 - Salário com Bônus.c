@@ -10,9 +10,6 @@ Imprima o total que o funcionário deverá receber, conforme exemplo fornecido.*
 
 #include <stdio.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
 int main(){
   char nome[100];
   double salarioFixo, salarioMes, vendasMes, bonus;
