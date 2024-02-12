@@ -19,6 +19,6 @@ int main(){
 
   salarioMes = 15%100 * vendasMes;
 
-  pritnf("TOTAL = R$ %.2f\n", salarioMes);
+  printf("TOTAL = R$ %.2f\n", salarioMes);
   return 0;
 }
