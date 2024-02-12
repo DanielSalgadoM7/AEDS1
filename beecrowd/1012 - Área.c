@@ -19,7 +19,7 @@ int main() {
     double areaTriangulo, areaCirculo, areaTrapezio, areaQuadrado, areaRetangulo;
     scanf("%lf %lf %lf", &valorA, &valorB, &valorC);
     
-    areaTriangulo = valorA * valorC;
+    areaTriangulo = (valorA * valorC)/2;
     areaCirculo = valorC * 3.14159;
     areaTrapezio = ((valorA + valorB)*valorC)/2;
     areaQuadrado = valorB * valorB;
