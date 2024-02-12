@@ -10,8 +10,16 @@ Saída
 A saída deverá ser uma mensagem "VOLUME" conforme o exemplo fornecido abaixo, com um espaço antes e um espaço depois da igualdade. O valor deverá ser apresentado com 3 casas após o ponto.*/
 
 #include <stdio.h>
-
-int main(){
-  
-  return 0;
+ 
+int main() {
+    int raio, raioTriplo;
+    double volume;
+    
+    scanf("%d", &raio);
+    
+    raioTriplo = raio * raio * raio;
+    volume = (4.0/3.0) * 3.14159 * raioTriplo;
+    
+    printf("VOLUME = %.3lf\n", volume);
+    return 0;
 }
