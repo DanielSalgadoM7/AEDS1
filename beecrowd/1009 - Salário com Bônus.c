@@ -12,13 +12,13 @@ Imprima o total que o funcionário deverá receber, conforme exemplo fornecido.*
 
 int main(){
   char nome[100];
-  float salario, vendasMes;
+  float salarioFixo, salarioMes, vendasMes;
 
   scanf(" %[^\n]", &nome);
-  scanf("%f", &vendasMes);
+  scanf("%f %f", &salarioFixo, &vendasMes);
 
-  salario = 15%100 * vendasMes;
+  salarioMes = 15%100 * vendasMes;
 
-  pritnf("TOTAL = R$ %.2f\n", salario);
+  pritnf("TOTAL = R$ %.2f\n", salarioMes);
   return 0;
 }
