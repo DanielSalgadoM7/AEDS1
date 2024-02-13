@@ -19,27 +19,27 @@ int main() {
     printf("%d\n", valorNota);
     
     //cada print é feito com o valor da nota, dividido pelo número desejado
-    printf("%d nota(s) de R$100,00\n", valorNota/100);
+    printf("%d nota(s) de R$ 100,00\n", valorNota/100);
     
     //depois de printar, a gente muda o valor da nota pro módulo da operação
     valorNota = valorNota%100;
     
     //520%100 = 20, sendo assim, valorNota = 20 agora
-    printf("%d nota(s) de R$50,00\n", valorNota/50);
+    printf("%d nota(s) de R$ 50,00\n", valorNota/50);
     valorNota = valorNota%50;
     
-    printf("%d nota(s) de R$20,00\n", valorNota/20);
+    printf("%d nota(s) de R$ 20,00\n", valorNota/20);
     valorNota = valorNota%20;
     
-    printf("%d nota(s) de R$10,00\n", valorNota/10);
+    printf("%d nota(s) de R$ 10,00\n", valorNota/10);
     valorNota = valorNota%10;
     
-    printf("%d nota(s) de R$5,00\n", valorNota/5);
+    printf("%d nota(s) de R$ 5,00\n", valorNota/5);
     valorNota = valorNota%5;
     
-    printf("%d nota(s) de R$2,00\n", valorNota/2);
+    printf("%d nota(s) de R$ 2,00\n", valorNota/2);
     valorNota = valorNota%2;
     
-    printf("%d nota(s) de R$1,00\n", valorNota);
+    printf("%d nota(s) de R$ 1,00\n", valorNota);
     return 0;
 }
