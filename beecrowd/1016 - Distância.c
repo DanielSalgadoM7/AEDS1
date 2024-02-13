@@ -9,3 +9,14 @@ O arquivo de entrada contém um número inteiro.
 
 Saída
 Imprima o tempo necessário seguido da mensagem "minutos".*/
+
+#include <stdio.h>
+ 
+int main(){
+    int carroX = 60, carroY = 90, distancia;
+    
+    distancia = carroY * 2;
+    
+    printf("%d minutos\n", distancia);
+    return 0;
+}
