@@ -13,10 +13,12 @@ Imprima o tempo necessário seguido da mensagem "minutos".*/
 #include <stdio.h>
  
 int main(){
-    int carroX = 60, carroY = 90, distancia;
+    int tempo, distancia;
     
-    distancia = carroY * 2;
+    scanf("%d", &distancia);
     
-    printf("%d minutos\n", distancia);
+    tempo = distancia * 2;
+    
+    printf("%d minutos\n", tempo);
     return 0;
 }
