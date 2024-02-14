@@ -3,7 +3,7 @@
 Entrada
 O arquivo de entrada contém um valor inteiro N.
 
-Saída
+Saída 
 Imprima o tempo lido no arquivo de entrada (segundos), convertido para horas:minutos:segundos, conforme exemplo fornecido.*/
 
 #include <stdio.h>
