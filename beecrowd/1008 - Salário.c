@@ -6,7 +6,8 @@ O arquivo de entrada contém 2 números inteiros e 1 número com duas casas deci
 trabalhada, respectivamente.
 
 Saída
-Imprima o número e o salário do funcionário, conforme exemplo fornecido, com um espaço em branco antes e depois da igualdade. 
+Imprima o número e o salário do funcionário, conforme exemplo fornecido, com um espaço em branco antes e depois da igualdade.
+
 No caso do salário, também deve haver um espaço em branco após o $.*/
 
 #include <stdio.h>
