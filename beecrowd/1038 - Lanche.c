@@ -1,11 +1,11 @@
 /*Com base na tabela abaixo, escreva um programa que leia o código de um item e a quantidade deste item. A seguir, calcule e mostre o valor da conta a pagar.
 
-Codigo     Lanche                Preco
+Codigo     Lanche               Preco
 1          Cachorro quente      4.0
-2          x-salada            4.5  
+2          x-salada             4.5  
 3          x-bacon              5.0
 4          torrada simples      2.0
-5          refrigerante        1.5
+5          refrigerante         1.5
   
 Entrada
 O arquivo de entrada contém dois valores inteiros correspondentes ao código e à quantidade de um item conforme tabela acima.
