@@ -11,4 +11,38 @@ A entrada contém quatro números de ponto flutuante correspendentes as notas do
 
 Saída
 Todas as respostas devem ser apresentadas com uma casa decimal. As mensagens devem ser impressas conforme a descrição do problema. 
-  Não esqueça de imprimir o enter após o final de cada linha, caso contrário obterá "Presentation Error".*/
+Não esqueça de imprimir o enter após o final de cada linha, caso contrário obterá "Presentation Error".*/
+
+#include <stdio.h>
+
+int main() {
+    double n1, n2, n3, n4, n5, media, mediaNova;
+
+    scanf("%lf %lf %lf %lf", &n1, &n2, &n3, &n4);
+
+    media = ((n1*2) + (n2*3) + (n3*4) + (n4*1))/10.0;
+
+    printf("Media: %.1lf\n", media);
+
+    if(media>=7.0){
+        printf("Aluno aprovado.\n");
+    }else if(media<5.0){
+        printf("Aluno reprovado.\n");
+    }else{
+        printf("Aluno em exame.\n");
+    }
+
+    if(media>=5.0 && media <7.0){
+        scanf("%lf", &n5);
+        printf("Nota do exame: %.1lf\n", n5);
+        mediaNova = (media + n5)/2.0;
+        if(mediaNova>5.0){
+            printf("Aluno aprovado.\n");
+            printf("Media final: %.1lf\n", mediaNova);
+        }else if(mediaNova<=5.0){
+            printf("Aluno reprovado.\n");
+            printf("Media final: %.1lf\n", mediaNova);
+        }
+    }
+    return 0;
+}
