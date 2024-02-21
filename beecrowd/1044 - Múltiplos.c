@@ -6,7 +6,7 @@ A entrada contém valores inteiros.
 Saída
 A saída deve conter uma das mensagens conforme descrito acima.*/
 
-#include <stdio.h>
+#include <stdio.h> 
  
 int main() {
     int valorA, valorB;
