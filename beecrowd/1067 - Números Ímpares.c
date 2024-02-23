@@ -4,7 +4,7 @@ Entrada
 O arquivo de entrada contém 1 valor inteiro qualquer.
 
 Saída
-Imprima todos os valores ímpares de 1 até X, inclusive X, se for o caso.*/
+Imprima todos os valores ímpares de 1 até X, inclusive X, se for o caso.*/ 
 
 #include <stdio.h>
 
