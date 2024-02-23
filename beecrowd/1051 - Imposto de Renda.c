@@ -18,22 +18,22 @@ Imprima o texto "R$" seguido de um espaço e do valor total devido de Imposto de
 Se o valor de entrada for menor ou igual a 2000, deverá ser impressa a mensagem "Isento".*/
 
 #include <stdio.h>
- 
+
 int main() {
     double renda = 0.0, imposto = 0.0;
-    
+
     scanf("%lf", &renda);
-    
+
     if(renda <= 2000.00){
         printf("Isento\n");
     }else if(renda > 2000.00 && renda <= 3000.00){
-        imposto = 0.08 * 1000.00 + 0.18 * 2.00;
+        imposto = 0.08 * (renda) + (int)(renda%1000);
         printf("R$ %.2lf\n", imposto);
     }else if(renda > 3000.00 && renda <= 4500.00){
-        imposto = 0.18 * renda;
+        imposto = 0.08 * (renda) + (int)(renda%1000);
         printf("R$ %.2lf\n", imposto);
     }else{
-        imposto = 0.28*renda;
+        imposto = 0.08 * 1000.00 + 0.28 * (renda - 4500.00);
         printf("R$ %.2lf\n", imposto);
     }
     return 0;
