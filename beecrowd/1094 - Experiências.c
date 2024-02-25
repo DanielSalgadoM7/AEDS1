@@ -18,7 +18,6 @@ sendo que o percentual deve ser apresentado com dois dígitos após o ponto.*/
 int main() {
     int valor = 0, qnt = 0, contCoelho = 0, contSapo = 0, contRato = 0, contTotal = 0;
     char tipo;
-    double porcentagem = 0.0;
 
     scanf("%d", &valor);
 
@@ -41,9 +40,9 @@ int main() {
     printf("Total de coelhos: %d\n", contCoelho);
     printf("Total de ratos: %d\n", contRato);
     printf("Total de sapos: %d\n", contSapo);
-    printf("Percentual de coelhos: %.2lf %\n", (contCoelho/100.0)*contTotal);
-    printf("Percentual de ratos: %.2lf %\n", (contRato/100.0)*contTotal);
-    printf("Percentual de sapos: %.2lf %\n", (contSapo/100.0)*contTotal);
+    printf("Percentual de coelhos: %.2lf %\n", (contCoelho*100.0)/contTotal);
+    printf("Percentual de ratos: %.2lf %\n", (contRato*100.0)/contTotal);
+    printf("Percentual de sapos: %.2lf %\n", (contSapo*100.0)/contTotal);
 
 
     return 0;
