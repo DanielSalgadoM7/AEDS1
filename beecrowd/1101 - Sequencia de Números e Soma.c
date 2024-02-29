@@ -10,10 +10,10 @@ Para cada dupla de valores, imprima a sequência do menor até o maior e a soma 
 #include <stdio.h>
 
 int main() {
-  int valorM = 0, valorN = 0, menor = 0, maior = 0, soma = 0;
-  scanf("%d %d", &valorM, &valorN);
+  int valorM = 0, valorN = 1, menor = 0, maior = 0, soma = 0;
 
-  while (valorM != 0 && valorN != 0) {
+  while (valorN != 0) {
+    scanf("%d %d", &valorM, &valorN);
     if (valorM > valorN) {
       menor = valorN;
       maior = valorM;
@@ -22,18 +22,13 @@ int main() {
       maior = valorN;
     }
 
-    for (int i = menor; i <= maior; i++) {
-      soma += i;
-    }
-
-    for (int i = menor; i <= maior; i++) {
-      printf("%d ", i);
-    }
+    if(valorM<=0 || valorN <=0)break;
+      for (int i = menor; i <= maior; i++) {
+        printf("%d ", i);
+        soma += i;
+      }
     printf("Sum=%d\n", soma);
-    
     soma = 0;
-    scanf("%d %d", &valorM, &valorN);
-    
   }
   return 0;
 }
