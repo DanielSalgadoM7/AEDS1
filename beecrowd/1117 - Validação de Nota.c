@@ -11,13 +11,13 @@ Quando duas notas válidas forem lidas, deve ser impressa a mensagem "media = " 
 #include <stdio.h>
 
 int main() {
-    double nota = 0.0, media = 0.0, soma[3];
+    double nota = 0.0, soma[2];
     int j = 0;
 
     while(1){
         scanf("%lf", &nota);
         if(nota >= 0 && nota <= 10){
-            soma[j] += nota;
+            soma[j] = nota;
             j++;
         }else{
           printf("nota invalida\n");
@@ -27,7 +27,7 @@ int main() {
         }
     }
 
-    media = (soma[0] + soma[1])/2.0;
+    double media = (soma[0] + soma[1])/2.0;
     printf("media = %.2lf\n", media);
 
     return 0;
