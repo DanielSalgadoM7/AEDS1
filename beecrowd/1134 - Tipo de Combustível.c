@@ -7,3 +7,35 @@ A entrada contém apenas valores inteiros e positivos.
 
 Saída
 Deve ser escrito a mensagem: "MUITO OBRIGADO" e a quantidade de clientes que abasteceram cada tipo de combustível, conforme exemplo.*/
+
+#include <stdio.h>
+
+int main() {
+  int opcao = 0, contAlcool = 0, contGasolina = 0, contDiesel = 0;
+  while (opcao != 4) {
+    scanf("%d", &opcao);
+    switch (opcao) {
+    case 1:
+      contAlcool++;
+      break;
+
+    case 2:
+      contGasolina++;
+      break;
+
+    case 3:
+      contDiesel++;
+      break;
+
+    case 4:
+      break;
+    }
+  }
+
+  printf("MUITO OBRIGADO\n");
+  printf("Alcool: %d\n", contAlcool);
+  printf("Gasolina: %d\n", contGasolina);
+  printf("Diesel: %d\n", contDiesel);
+
+  return 0;
+}
