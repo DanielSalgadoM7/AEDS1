@@ -11,24 +11,50 @@ Quando duas notas válidas forem lidas, deve ser impressa a mensagem "media = " 
 #include <stdio.h>
 
 int main() {
-    double nota = 0.0, soma[2];
-    int j = 0;
+  double nota = 0.0, media = 0.0, soma[2];
+  int j = 0, opcao = 0;
 
-    while(1){
-        scanf("%lf", &nota);
-        if(nota >= 0 && nota <= 10){
-            soma[j] = nota;
-            j++;
-        }else{
-          printf("nota invalida\n");
-        }
-        if(j>1){
-            break;
-        }
+  while (nota != 2) {
+    scanf("%lf", &nota);
+    if(nota >=0 && nota <=10){
+        soma[j]+=nota;
+        j++;
+    }else{
+        printf("nota invalida\n");
+    }
+    media = (soma[0]+soma[1])/2;
+
+    if(j>2){
+        break;
     }
 
-    double media = (soma[0] + soma[1])/2.0;
-    printf("media = %.2lf\n", media);
+    if(j > 1){
+      printf("media = %.2lf\n", media);
+      printf("novo calculo (1-sim 2-nao)\n");
+      scanf("%d", &opcao);
+      if(opcao == 1){
+        soma[0] = 0;
+        soma[1] = 0;
+        media = 0;
+        j = 0;
+        scanf("%lf", &nota);
+        if(nota >=0 && nota <=10){
+            soma[j]+=nota;
+            j++;
+        }else{
+            printf("nota invalida\n");
+        }
+        media = (soma[0]+soma[1])/2;
 
-    return 0;
+        if(j>2){
+            break;
+        }
+      }else if(opcao == 2){
+        break;
+      }else{
+        scanf("%d", &opcao);
+      }
+    }
+  }
+  return 0;
 }
