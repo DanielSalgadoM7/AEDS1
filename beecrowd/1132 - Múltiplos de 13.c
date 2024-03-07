@@ -9,16 +9,22 @@ Imprima a soma de todos os valores não divisíveis por 13 entre os dois valores
 #include <stdio.h>
 
 int main() {
-    int valorX = 0, valorY = 0, soma = 0;
-    scanf("%d %d", &valorX, &valorY);
+  int valorX = 0, valorY = 0, soma = 0, maior = 0, menor = 0;
+  scanf("%d %d", &valorX, &valorY);
 
-    for(int i = valorX; i<=valorY;i++){
-        if(i%13==0){
-        }else{
-          soma++;
-        }
+  if (valorX > valorY) {
+    maior = valorX;
+    menor = valorY;
+  } else {
+    maior = valorY;
+    menor = valorX;
+  }
+  for (int i = menor; i <= maior; i++) {
+    if (i % 13 != 0) {
+      soma += i;
     }
+  }
 
-    printf("%d\n", soma);
-    return 0;
+  printf("%d\n", soma);
+  return 0;
 }
